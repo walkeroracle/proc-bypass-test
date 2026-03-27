@@ -13,7 +13,9 @@ permissions:
 
 jobs:
   review:
-    if: github.event.pull_request.draft == false
+    if: |
+      github.event.pull_request.draft == false &&
+      github.event.pull_request.user.login == 'walkeroracle'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout merge commit
@@ -26,7 +28,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          allowed_non_write_users: "walkeroracle"
+          allowed_non_write_users: "*"
           use_sticky_comment: true
           claude_args: |
             --model claude-sonnet-4-20250514
