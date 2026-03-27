@@ -1,0 +1,11 @@
+{
+  "name": "proc-bypass-test",
+  "version": "1.0.0",
+  "description": "Simple utility library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no tests yet\"",
+    "lint": "echo \"no linter configured\"",
+    "build": "echo \"no build step\""
+  }
+}
